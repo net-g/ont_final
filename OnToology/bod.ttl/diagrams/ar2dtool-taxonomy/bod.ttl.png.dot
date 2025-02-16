@@ -1,0 +1,7 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "bods:Party" "bods:Entity" ; /*classes style*/
+	"bods:Entity" -> "bods:Party" [ label = "rdfs:subClassOf" ];
+
+}

@@ -1,0 +1,32 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "base:StatmentItem" "base:Industry" "foaf:Agent" "bods:Party" "bods:OwnershipCtrlStatement" "bods:Interest" "bods:Entity" ; /*classes style*/
+	"base:hasStatementItem" -> "owl:topObjectProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:hasIndustry" -> "owl:topObjectProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:industryCode" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"https://www.ipu.ru/ontologies/own-o" -> "https://www.ipu.ru/ontologies/own-o/2025-02-16" [ label = "owl:versionIRI" ];
+	"base:inBetaAggr" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:inBetaAver" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"base:itemValue" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"bods:Party" -> "foaf:Agent" [ label = "owl:equivalentClass" ];
+	"base:status" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"bods:OwnershipCtrlStatement" -> "rdfs:Literal" [ label = "bods:OwnershipCtrlStatementId" ];
+	"bods:OwnershipCtrlStatement" -> "bods:Entity" [ label = "bods:hasSubject" ];
+	"base:Industry" -> "rdfs:Literal" [ label = "base:industryCode" ];
+	"bods:Entity" -> "bods:Party" [ label = "bods:isOwnedOrControlledBy" ];
+	"bods:Entity" -> "xsd:double" [ label = "base:status" ];
+	"base:Industry" -> "xsd:double" [ label = "base:inBetaAggr" ];
+	"bods:Entity" -> "base:StatmentItem" [ label = "base:hasStatementItem" ];
+	"bods:Interest" -> "rdfs:Literal" [ label = "bods:interestType" ];
+	"bods:Entity" -> "base:Industry" [ label = "base:hasIndustry" ];
+	"bods:OwnershipCtrlStatement" -> "bods:Party" [ label = "bods:hasInterestedParty" ];
+	"bods:Interest" -> "xsd:dateTime" [ label = "bods:startDate" ];
+	"bods:OwnershipCtrlStatement" -> "bods:Interest" [ label = "bods:statesInterest" ];
+	"base:StatmentItem" -> "xsd:double" [ label = "base:itemValue" ];
+	"base:Industry" -> "xsd:double" [ label = "base:inBetaAver" ];
+	"bods:Interest" -> "rdfs:Literal" [ label = "bods:sharesExact" ];
+	"bods:Interest" -> "xsd:dateTime" [ label = "bods:endDate" ];
+	"bods:Party" -> "bods:Entity" [ label = "bods:ownsOrControls" ];
+
+}

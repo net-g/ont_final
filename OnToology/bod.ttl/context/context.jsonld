@@ -1,0 +1,115 @@
+{
+  "@context" : {
+    "hasIndustry" : {
+      "@id" : "https://www.ipu.ru/ontologies/own-o#hasIndustry",
+      "@type" : "@id"
+    },
+    "hasSubject" : {
+      "@id" : "http://bods.openownership.org/vocabulary/hasSubject",
+      "@type" : "@id"
+    },
+    "Industry" : {
+      "@id" : "https://www.ipu.ru/ontologies/own-o#Industry"
+    },
+    "OwnershipCtrlStatement" : {
+      "@id" : "http://bods.openownership.org/vocabulary/OwnershipCtrlStatement"
+    },
+    "startDate" : {
+      "@id" : "http://bods.openownership.org/vocabulary/startDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "ownsOrControls" : {
+      "@id" : "http://bods.openownership.org/vocabulary/ownsOrControls",
+      "@type" : "@id"
+    },
+    "statesInterest" : {
+      "@id" : "http://bods.openownership.org/vocabulary/statesInterest",
+      "@type" : "@id"
+    },
+    "topDataProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+    },
+    "isSubjectOf" : {
+      "@id" : "http://bods.openownership.org/vocabulary/isSubjectOf",
+      "@type" : "@id"
+    },
+    "industryCode" : {
+      "@id" : "https://www.ipu.ru/ontologies/own-o#industryCode",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "isOwnedOrControlledBy" : {
+      "@id" : "http://bods.openownership.org/vocabulary/isOwnedOrControlledBy",
+      "@type" : "@id"
+    },
+    "StatmentItem" : {
+      "@id" : "https://www.ipu.ru/ontologies/own-o#StatmentItem"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "Interest" : {
+      "@id" : "http://bods.openownership.org/vocabulary/Interest"
+    },
+    "Agent" : {
+      "@id" : "http://xmlns.com/foaf/0.1/Agent"
+    },
+    "topObjectProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+      "@type" : "@id"
+    },
+    "hasStatementItem" : {
+      "@id" : "https://www.ipu.ru/ontologies/own-o#hasStatementItem",
+      "@type" : "@id"
+    },
+    "status" : {
+      "@id" : "https://www.ipu.ru/ontologies/own-o#status",
+      "@type" : "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "statedBy" : {
+      "@id" : "https://www.ipu.ru/ontologies/own-o#statedBy",
+      "@type" : "@id"
+    },
+    "inBetaAver" : {
+      "@id" : "https://www.ipu.ru/ontologies/own-o#inBetaAver",
+      "@type" : "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "OwnershipCtrlStatementId" : {
+      "@id" : "http://bods.openownership.org/vocabulary/OwnershipCtrlStatementId",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "sharesExact" : {
+      "@id" : "http://bods.openownership.org/vocabulary/sharesExact",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "hasInterestedParty" : {
+      "@id" : "http://bods.openownership.org/vocabulary/hasInterestedParty",
+      "@type" : "@id"
+    },
+    "Entity" : {
+      "@id" : "http://bods.openownership.org/vocabulary/Entity"
+    },
+    "interestType" : {
+      "@id" : "http://bods.openownership.org/vocabulary/interestType",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "isInterestedPartyOf" : {
+      "@id" : "http://bods.openownership.org/vocabulary/isInterestedPartyOf",
+      "@type" : "@id"
+    },
+    "Party" : {
+      "@id" : "http://bods.openownership.org/vocabulary/Party"
+    },
+    "inBetaAggr" : {
+      "@id" : "https://www.ipu.ru/ontologies/own-o#inBetaAggr",
+      "@type" : "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "endDate" : {
+      "@id" : "http://bods.openownership.org/vocabulary/endDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "itemValue" : {
+      "@id" : "https://www.ipu.ru/ontologies/own-o#itemValue",
+      "@type" : "http://www.w3.org/2001/XMLSchema#double"
+    }
+  }
+}

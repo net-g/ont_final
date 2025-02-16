@@ -1,0 +1,181 @@
+@prefix : <https://www.ipu.ru/ontologies/own-o#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://www.ipu.ru/ontologies/own-o#> .
+
+<https://www.ipu.ru/ontologies/own-o> rdf:type owl:Ontology ;
+                                       owl:versionIRI <https://www.ipu.ru/ontologies/own-o/2025-02-16> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://bods.openownership.org/vocabulary/hasInterestedParty
+<http://bods.openownership.org/vocabulary/hasInterestedParty> rdf:type owl:ObjectProperty ;
+                                                              owl:inverseOf <http://bods.openownership.org/vocabulary/isInterestedPartyOf> ;
+                                                              rdfs:domain <http://bods.openownership.org/vocabulary/OwnershipCtrlStatement> ;
+                                                              rdfs:range <http://bods.openownership.org/vocabulary/Party> .
+
+
+###  http://bods.openownership.org/vocabulary/hasSubject
+<http://bods.openownership.org/vocabulary/hasSubject> rdf:type owl:ObjectProperty ;
+                                                      owl:inverseOf <http://bods.openownership.org/vocabulary/isSubjectOf> ;
+                                                      rdfs:domain <http://bods.openownership.org/vocabulary/OwnershipCtrlStatement> ;
+                                                      rdfs:range <http://bods.openownership.org/vocabulary/Entity> .
+
+
+###  http://bods.openownership.org/vocabulary/isInterestedPartyOf
+<http://bods.openownership.org/vocabulary/isInterestedPartyOf> rdf:type owl:ObjectProperty .
+
+
+###  http://bods.openownership.org/vocabulary/isOwnedOrControlledBy
+<http://bods.openownership.org/vocabulary/isOwnedOrControlledBy> rdf:type owl:ObjectProperty ;
+                                                                 owl:inverseOf <http://bods.openownership.org/vocabulary/ownsOrControls> ;
+                                                                 rdfs:domain <http://bods.openownership.org/vocabulary/Entity> ;
+                                                                 rdfs:range <http://bods.openownership.org/vocabulary/Party> ;
+                                                                 rdfs:label "Party with ownership or control over this entity" .
+
+
+###  http://bods.openownership.org/vocabulary/isSubjectOf
+<http://bods.openownership.org/vocabulary/isSubjectOf> rdf:type owl:ObjectProperty .
+
+
+###  http://bods.openownership.org/vocabulary/ownsOrControls
+<http://bods.openownership.org/vocabulary/ownsOrControls> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain <http://bods.openownership.org/vocabulary/Party> ;
+                                                          rdfs:range <http://bods.openownership.org/vocabulary/Entity> ;
+                                                          rdfs:label "Ownership or control in an entity" .
+
+
+###  http://bods.openownership.org/vocabulary/statesInterest
+<http://bods.openownership.org/vocabulary/statesInterest> rdf:type owl:ObjectProperty ;
+                                                          owl:inverseOf :statedBy ;
+                                                          rdfs:domain <http://bods.openownership.org/vocabulary/OwnershipCtrlStatement> ;
+                                                          rdfs:range <http://bods.openownership.org/vocabulary/Interest> .
+
+
+###  https://www.ipu.ru/ontologies/own-o#hasIndustry
+:hasIndustry rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain <http://bods.openownership.org/vocabulary/Entity> ;
+             rdfs:range :Industry .
+
+
+###  https://www.ipu.ru/ontologies/own-o#hasStatementItem
+:hasStatementItem rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain <http://bods.openownership.org/vocabulary/Entity> ;
+                  rdfs:range :StatmentItem .
+
+
+###  https://www.ipu.ru/ontologies/own-o#statedBy
+:statedBy rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://bods.openownership.org/vocabulary/OwnershipCtrlStatementId
+<http://bods.openownership.org/vocabulary/OwnershipCtrlStatementId> rdf:type owl:DatatypeProperty ;
+                                                                    rdfs:domain <http://bods.openownership.org/vocabulary/OwnershipCtrlStatement> ;
+                                                                    rdfs:range rdfs:Literal .
+
+
+###  http://bods.openownership.org/vocabulary/endDate
+<http://bods.openownership.org/vocabulary/endDate> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <http://bods.openownership.org/vocabulary/Interest> ;
+                                                   rdfs:range xsd:dateTime .
+
+
+###  http://bods.openownership.org/vocabulary/interestType
+<http://bods.openownership.org/vocabulary/interestType> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:domain <http://bods.openownership.org/vocabulary/Interest> ;
+                                                        rdfs:range rdfs:Literal .
+
+
+###  http://bods.openownership.org/vocabulary/sharesExact
+<http://bods.openownership.org/vocabulary/sharesExact> rdf:type owl:DatatypeProperty ;
+                                                       rdfs:domain <http://bods.openownership.org/vocabulary/Interest> ;
+                                                       rdfs:range rdfs:Literal .
+
+
+###  http://bods.openownership.org/vocabulary/startDate
+<http://bods.openownership.org/vocabulary/startDate> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain <http://bods.openownership.org/vocabulary/Interest> ;
+                                                     rdfs:range xsd:dateTime .
+
+
+###  https://www.ipu.ru/ontologies/own-o#inBetaAggr
+:inBetaAggr rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :Industry ;
+            rdfs:range xsd:double .
+
+
+###  https://www.ipu.ru/ontologies/own-o#inBetaAver
+:inBetaAver rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :Industry ;
+            rdfs:range xsd:double .
+
+
+###  https://www.ipu.ru/ontologies/own-o#industryCode
+:industryCode rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Industry ;
+              rdfs:range rdfs:Literal .
+
+
+###  https://www.ipu.ru/ontologies/own-o#itemValue
+:itemValue rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :StatmentItem ;
+           rdfs:range xsd:double .
+
+
+###  https://www.ipu.ru/ontologies/own-o#status
+:status rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain <http://bods.openownership.org/vocabulary/Entity> ;
+        rdfs:range xsd:double .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://bods.openownership.org/vocabulary/Entity
+<http://bods.openownership.org/vocabulary/Entity> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://bods.openownership.org/vocabulary/Party> .
+
+
+###  http://bods.openownership.org/vocabulary/Interest
+<http://bods.openownership.org/vocabulary/Interest> rdf:type owl:Class .
+
+
+###  http://bods.openownership.org/vocabulary/OwnershipCtrlStatement
+<http://bods.openownership.org/vocabulary/OwnershipCtrlStatement> rdf:type owl:Class .
+
+
+###  http://bods.openownership.org/vocabulary/Party
+<http://bods.openownership.org/vocabulary/Party> rdf:type owl:Class ;
+                                                 owl:equivalentClass <http://xmlns.com/foaf/0.1/Agent> .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class .
+
+
+###  https://www.ipu.ru/ontologies/own-o#Industry
+:Industry rdf:type owl:Class .
+
+
+###  https://www.ipu.ru/ontologies/own-o#StatmentItem
+:StatmentItem rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
